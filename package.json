@@ -1,0 +1,23 @@
+{
+  "name": "secret-gift-portal",
+  "version": "1.0.0",
+  "description": "Secure contact form with secret code and OTP verification for collecting gift recipient information",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "contact-form",
+    "otp-verification",
+    "web3forms",
+    "azure-static-web-app",
+    "gift-portal"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/secret-gift-portal.git"
+  }
+}
