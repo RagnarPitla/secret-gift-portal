@@ -1,5 +1,11 @@
-// Configuration
-const SECRET_CODE = "GIFT2026"; // Change this to your secret code
+// Configuration - Multiple valid gift codes
+const VALID_CODES = [
+  "GOLDENMATYOGA",
+  "GIFT2026",
+  "FAMILYFRIENDS",
+  "WHOOPGIFT",
+  "RAGNARGIFT"
+];
 
 // Utility functions
 function showSection(sectionId) {
@@ -26,14 +32,14 @@ function validateSecretCode() {
     .toUpperCase();
 
   if (!enteredCode) {
-    showError("code-error", "Please enter a secret code");
+    showError("code-error", "Please enter a gift code");
     return;
   }
 
-  if (enteredCode === SECRET_CODE) {
+  if (VALID_CODES.includes(enteredCode)) {
     showSection("form-section");
   } else {
-    showError("code-error", "Invalid secret code. Please try again.");
+    showError("code-error", "Invalid gift code. Please try again.");
     document.getElementById("secret-code").value = "";
   }
 }
@@ -50,6 +56,7 @@ document
     submitButton.disabled = true;
 
     // Get form values
+    const giftSelection = document.getElementById("gift-selection").value;
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
@@ -62,6 +69,7 @@ document
 
     // Construct message body with all shipping information
     let message = `GIFT RECIPIENT INFORMATION\n\n`;
+    message += `Selected Gift: ${giftSelection}\n`;
     message += `Phone: ${phone}\n`;
     message += `\nShipping Address:\n`;
     message += `${address}\n`;
@@ -74,7 +82,7 @@ document
 
     // Create form data with only Web3Forms accepted fields
     const formData = new FormData();
-    formData.append("access_key", "86eb9331-f0c0-4e97-8ca4-69dfb6bc3e99");
+    formData.append("access_key", "8f29bbf4-5837-4419-8ed5-5792246fca13");
     formData.append("subject", "New Gift Recipient Information");
     formData.append("name", name);
     formData.append("email", email);

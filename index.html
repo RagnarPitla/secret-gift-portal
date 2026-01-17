@@ -12,15 +12,15 @@
       <div id="secret-code-section" class="section active">
         <div class="card">
           <div class="emoji">🔐</div>
-          <h1>Secret Gift Portal</h1>
-          <p>Enter your secret code to unlock the gift form</p>
+          <h1>Family & Friends Gift Portal</h1>
+          <p>Hi! Ragnar has provided this link to offer you his Family and Friends gift. Enter your gift code to continue.</p>
           <input
             type="text"
             id="secret-code"
-            placeholder="Enter secret code"
+            placeholder="Enter gift code"
             autocomplete="off"
           />
-          <button onclick="validateSecretCode()">Unlock</button>
+          <button onclick="validateSecretCode()">Unlock Gift</button>
           <div id="code-error" class="error"></div>
         </div>
       </div>
@@ -30,18 +30,33 @@
         <div class="card">
           <div class="emoji">🎁</div>
           <h1>Claim Your Gift!</h1>
-          <p>Please provide your details so we can send you the gift</p>
+          <div class="gifts-remaining">
+            <span class="pulse"></span>
+            <strong>2/3</strong> gifts remaining!
+          </div>
+          <p>Please submit your details so we can send your gift.</p>
           <form id="gift-form">
             <input
               type="hidden"
               name="access_key"
-              value="86eb9331-f0c0-4e97-8ca4-69dfb6bc3e99"
+              value="8f29bbf4-5837-4419-8ed5-5792246fca13"
             />
             <input
               type="hidden"
               name="subject"
               value="New Gift Recipient Information"
             />
+
+            <div class="form-group">
+              <label for="gift-selection">Select Your Gift *</label>
+              <select id="gift-selection" name="gift" required>
+                <option value="Whoop 5.0" selected>Whoop 5.0</option>
+                <option value="AirPods" disabled class="disabled-option">AirPods (Unavailable)</option>
+                <option value="Apple Watch" disabled class="disabled-option">Apple Watch (Unavailable)</option>
+                <option value="Google Watch" disabled class="disabled-option">Google Watch (Unavailable)</option>
+                <option value="Fitness Equipment" disabled class="disabled-option">Fitness Equipment (Unavailable)</option>
+              </select>
+            </div>
 
             <div class="form-group">
               <label for="email">Email Address *</label>
@@ -91,6 +106,10 @@
               <textarea id="notes" rows="3"></textarea>
             </div>
 
+            <div class="disclaimer">
+              <strong>Disclaimer:</strong> Submitting your address does not guarantee delivery to your location. This is a Family & Friends program, and we save this information for our records. If possible, we will ship the gift directly to you instead of to <span class="highlight-name">Ragnar Pitla</span>.
+            </div>
+
             <button type="submit">Submit Information</button>
             <div id="form-error" class="error"></div>
           </form>
@@ -103,7 +122,7 @@
           <div class="emoji">✅</div>
           <h1>Thank You!</h1>
           <p>Your information has been submitted successfully.</p>
-          <p>Your gift will be on its way soon! 🚚</p>
+          <p>We've saved your details and will do our best to get your gift to you!</p>
         </div>
       </div>
     </div>
